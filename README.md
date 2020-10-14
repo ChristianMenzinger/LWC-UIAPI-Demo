@@ -1,8 +1,11 @@
 # Presentation and sample project how to leverage User Interface API hooks in Lightning Web Components
 
 Deploy to a Scratch Org:
+
 sfdx force:org:create -a LWC-UIAPI-Demo -f ./config/project-scratch-def.json -s
+
 sfdx force:source:push
+
 sfdx force:org:open -u LWC-UIAPI-Demo
 
 # Salesforce App
