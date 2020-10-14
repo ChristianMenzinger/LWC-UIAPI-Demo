@@ -1,0 +1,27 @@
+<template>
+  <div>
+    <ul class="slds-has-dividers_around-space">
+      <template for:each={picklistFieldList} for:item="picklistField">
+        <li class="slds-item" key={picklistField.value}>
+          <article class="slds-card">
+            <div class="slds-card__body slds-card__body_inner">
+              <article class="slds-tile slds-tile_board">
+                <p
+                  class="slds-truncate slds-text-title_caps slds-text-align_center"
+                  title={picklistField.label}
+                >
+                  <template if:true={picklistField.isSelected}>
+                    <span class="selected">{picklistField.label}</span>
+                  </template>
+                  <template if:false={picklistField.isSelected}>
+                    <span>{picklistField.label}</span>
+                  </template>
+                </p>
+              </article>
+            </div>
+          </article>
+        </li>
+      </template>
+    </ul>
+  </div>
+</template>

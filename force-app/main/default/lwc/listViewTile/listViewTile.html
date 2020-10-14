@@ -1,0 +1,37 @@
+<template>
+  <div>
+    <ul class="slds-has-dividers_around-space">
+      <!-- outer loop to create one card for each record -->
+      <template for:each={recordList} for:item="record">
+        <li class="slds-item" key={record.id}>
+          <article class="slds-card">
+            <div class="slds-card__header slds-text-align_center">
+              <header>
+                <a href={record.relativeLink}>{record.name}</a>
+              </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+              <!-- loop to display all fields/values for record -->
+              <template for:each={record.fieldValues} for:item="field">
+                <article
+                  key={field.uniqueKey}
+                  class="field slds-tile slds-tile_board"
+                >
+                  <p
+                    class="slds-truncate slds-text-title_caps"
+                    title={field.fieldName}
+                  >
+                    <b>{field.fieldName}</b>
+                  </p>
+                  <p class="slds-truncate" title={field.fieldValue}>
+                    {field.fieldValue}&nbsp;
+                  </p>
+                </article>
+              </template>
+            </div>
+          </article>
+        </li>
+      </template>
+    </ul>
+  </div>
+</template>

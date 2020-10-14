@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>List View Tile</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__HomePage,lightning__RecordPage">
+            <property name="objectAPIName" type="String" label="SObject API name" description="Use the full qualified API name of the SObject of the underlaying list view, like 'Account' or 'myCustomObject__c'" />
+            <property name="listViewAPIName" type="String" label="ListView API name" description="Use the full qualified list API name of the list view like 'MyAccounts'." />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
